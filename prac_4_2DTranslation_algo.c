@@ -19,10 +19,10 @@ int main()
    int ox,oy;
    printf("Enter new coordinates for Translation origin\n");
    scanf("%d %d",&ox,&oy);
-   xa=xa+ox;
-   xb=xb+ox;
-   ya=ya+oy;
-   yb=yb+oy;
+   xa=xa-ox;
+   xb=xb-ox;
+   ya=ya-oy;
+   yb=yb-oy;
 
    initgraph(&gd,&gm,NULL);
    line(xa,ya,xb,yb);

@@ -20,21 +20,20 @@ int main()
    int rx,ry;
    printf("Enter coordinates for point about which should i Scale\n");
    scanf("%d %d",&rx,&ry);
-   xa=xa+rx;
-   xb=xb+rx;
-   ya=ya+ry;
-   yb=yb+ry;
+   xa=xa-rx;
+   xb=xb-rx;
+   ya=ya-ry;
+   yb=yb-ry;
 
    xa=xa*sx;
    xb=xb*sx;
    ya=ya*sy;
    yb=yb*sy;
 
-   xa=xa-rx;
-   xb=xb-rx;
-   ya=ya-ry;
-   yb=yb-ry;
-   
+   xa=xa+rx;
+   xb=xb+rx;
+   ya=ya+ry;
+   yb=yb+ry;
    initgraph(&gd,&gm,NULL);
    line(xa,ya,xb,yb);
    setlinestyle(DASHED_LINE,0,THICK_WIDTH);

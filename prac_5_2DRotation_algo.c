@@ -20,10 +20,10 @@ int main()
    scanf("%d %d",&rx,&ry);
    printf("Enter angle by which to rotate\n");
    scanf("%lf",&ang);
-   xa=xa+rx;
-   xb=xb+rx;
-   ya=ya+ry;
-   yb=yb+ry;
+   xa=xa-rx;
+   xb=xb-rx;
+   ya=ya-ry;
+   yb=yb-ry;
    val = PI / 180.0;
    ang=ang*val;
    float nxa=xa,nya=ya,nyb=yb,nxb=xb;
@@ -31,11 +31,10 @@ int main()
    ya = (nxa*sin(ang))+(nya*cos(ang));
    xb = (nxb*cos(ang))-(nyb*sin(ang));
    yb = (nxb*sin(ang))+(nyb*cos(ang));
-   xa=xa-rx;
-   xb=xb-rx;
-   ya=ya-ry;
-   yb=yb-ry;
-
+   xa=xa+rx;
+   xb=xb+rx;
+   ya=ya+ry;
+   yb=yb+ry;
    initgraph(&gd,&gm,NULL);
    line(xa,ya,xb,yb);
    setlinestyle(DASHED_LINE,0,THICK_WIDTH);

@@ -31,10 +31,10 @@ int main()
      int ox,oy;
      printf("Enter new coordinates for Translation origin\n");
      scanf("%d %d",&ox,&oy);
-     xa=xa+ox;
-     xb=xb+ox;
-     ya=ya+oy;
-     yb=yb+oy;
+     xa=xa-ox;
+     xb=xb-ox;
+     ya=ya-oy;
+     yb=yb-oy;
    }
    else if(choice==2)
    {
@@ -44,10 +44,10 @@ int main()
      scanf("%d %d",&rx,&ry);
      printf("Enter angle by which to rotate\n");
      scanf("%lf",&ang);
-     xa=xa+rx;
-     xb=xb+rx;
-     ya=ya+ry;
-     yb=yb+ry;
+     xa=xa-rx;
+     xb=xb-rx;
+     ya=ya-ry;
+     yb=yb-ry;
 
      val = PI / 180.0;
       ang=ang*val;
@@ -57,10 +57,11 @@ int main()
     ya = (nxa*sin(ang))+(nya*cos(ang));
     xb = (nxb*cos(ang))-(nyb*sin(ang));
     yb = (nxb*sin(ang))+(nyb*cos(ang));
-  xa=xa-rx;
-  xb=xb-rx;
-  ya=ya-ry;
-  yb=yb-ry;
+
+     xa=xa+rx;
+     xb=xb+rx;
+     ya=ya+ry;
+     yb=yb+ry;
 
    }
    else if (choice==3)
@@ -71,20 +72,21 @@ int main()
      int rx,ry;
      printf("Enter coordinates for point about which should i Scale\n");
      scanf("%d %d",&rx,&ry);
-     xa=xa+rx;
-     xb=xb+rx;
-     ya=ya+ry;
-     yb=yb+ry;
+     xa=xa-rx;
+     xb=xb-rx;
+     ya=ya-ry;
+     yb=yb-ry;
 
      xa=xa*sx;
      xb=xb*sx;
      ya=ya*sy;
      yb=yb*sy;
 
-     xa=xa-rx;
-     xb=xb-rx;
-     ya=ya-ry;
-     yb=yb-ry;
+
+     xa=xa+rx;
+     xb=xb+rx;
+     ya=ya+ry;
+     yb=yb+ry;
    }
    else if (choice==4)
    {
