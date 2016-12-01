@@ -97,9 +97,9 @@ point translate_Point_WRT_Translation_Factors(point p,translate t)
 /*Scales a point using the scaling factors supplied w.r.t. a given point */
 point scale_Point_WRT_Point(point p,point r,scale s)
 {
-  p.x *= s.x;
   p.x -= r.x;
   p.y -= r.y;
+  p.x *= s.x;
   p.y *= s.y;
   p.x += r.x;
   p.y += r.y;
@@ -201,15 +201,16 @@ void stressTesterStartPoint(translate t,translate t1,point r,float angle,float a
     }
   }
 }
-void stressTesterUformScalRotScalPointAtOrigin(translate t,translate t1,float angle,float angle1,scale s,scale s1)
+void stressTesterUformScalRotScalPointAtOrigin(translate t,translate t1,point p,float angle,float angle1,point sr,scale s,scale s1)
 {
-  point p;
-  p.x = 0;
-  p.y = 0;
   if(s.x != s.y)
   {
     printf("Scaling factors not uniform ...\nTaking %f to be the scaling factor\n",s.x );
     s.y = s.x;
+  }
+  if((p.x != sr.x) || (p.y != sr.y))
+  {
+    printf("Pivot for rotation and scaing not equal\nTaking (%f,%f) to be the Pivot\n",p.x,p.y );
   }
   stressTesterStartPoint(t,t1,p,angle,angle1,p,s,s1);
 }
@@ -244,7 +245,7 @@ void stressTestCreater(int num,int choice)
     }
     if(choice == 2)
     {
-      stressTesterUformScalRotScalPointAtOrigin(t,t1,angle,angle1,s,s1);
+      stressTesterUformScalRotScalPointAtOrigin(t,t1,r,angle,angle1,sr,s,s1);
     }
   }
 }
