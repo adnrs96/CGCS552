@@ -49,7 +49,7 @@ int main()
        ya=temp;
      }
      int dx = xb-xa;
-     int dy = yb-ya;
+     int dy = ya-yb;
      int D = dy-dx;
      int x = xa;
      for ( int y = ya;y>yb;y--)
