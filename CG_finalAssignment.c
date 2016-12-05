@@ -181,8 +181,11 @@ void stressTesterEndPoint(point starting,translate t,translate t1,point r,float 
     {
       l.p2.x = i;
       l.p2.y = j;
-      inv2DTP temp = try_2DTransformation_pairs(l,t,t1,r,angle,angle1,sr,s,s1);
-      print_LineOperationsStatus(l,t,t1,r,angle,angle1,sr,s,s1,temp);
+      if(!check_Equality_Point(l.p1,l.p2))
+      {
+        inv2DTP temp = try_2DTransformation_pairs(l,t,t1,r,angle,angle1,sr,s,s1);
+        print_LineOperationsStatus(l,t,t1,r,angle,angle1,sr,s,s1,temp);
+      }
     }
   }
 }
